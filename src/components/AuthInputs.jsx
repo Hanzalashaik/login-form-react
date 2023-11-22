@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import styled from 'styled-components';
+// import { styled } from "styled-components"
 
 export default function AuthInputs() {
   const [enteredEmail, setEnteredEmail] = useState('');
@@ -19,18 +21,45 @@ export default function AuthInputs() {
 
   const emailNotValid = submitted && !enteredEmail.includes('@');
   const passwordNotValid = submitted && enteredPassword.trim().length < 6;
+  // console.log(emailNotValid);
+ 
 
+  //Styled Components 
+  //Not working properly
+  // const StyleLabel = styled.label` //To use replace label tag Label
+  //   color : ${({$dynamic}) => $dynamic ? '#f87171' : '#d1d5db'}
+  // `;
+  // //Not working properly
+  // const StyleInput = styled.input` //To use replace label tag Label
+  //   background-color : ${({$invalid})=> $invalid ? "#fed2d2" :"#d1d5db"}
+  // `
+
+  const StyleButton =styled.button`
+  padding: 1rem 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 0.25rem;
+  color: #1f2937;
+  background-color: #f0b322;
+  border-radius: 6px;
+  border: none;
+
+  &:hover{
+    background-color: #f0920e;
+  }
+  `
   return (
     <div id="auth-inputs">
       <div className="controls">
         <p>
-          <label>Email</label>
+          <label $dynamic={emailNotValid} >Email</label>
           <input
+            // $invalid={emailNotValid}
             type="email"
-            style={{
-              backgroundColor : emailNotValid ? "#fed2d2" :"#d1d5db"
-            }}
-            // className={emailNotValid ? 'invalid' : undefined}
+            // style={{
+            //   backgroundColor : emailNotValid ? "#fed2d2" :"#d1d5db"
+            // }}
+            className={emailNotValid ? 'invalid' : undefined}
             onChange={(event) => handleInputChange('email', event.target.value)}
           />
         </p>
@@ -52,7 +81,7 @@ export default function AuthInputs() {
         <button type="button" className="text-button">
           Create a new account
         </button>
-        <button className='button' onClick={handleLogin}>Sign In</button>
+        <StyleButton className='button' onClick={handleLogin}>Sign In</StyleButton>
       </div>
     </div>
   );
