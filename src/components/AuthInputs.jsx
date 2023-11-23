@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import styled from 'styled-components';
-// import { styled } from "styled-components"
+import { styled } from "styled-components"
+// import Button from "./Button.jsx"
 
 export default function AuthInputs() {
   const [enteredEmail, setEnteredEmail] = useState('');
@@ -49,16 +49,16 @@ export default function AuthInputs() {
   }
   `
   return (
-    <div id="auth-inputs">
-      <div className="controls">
+    <div id="auth-inputs" className='w-full mx-auto max-w-sm p-8 rounded shadow-md bg-gradient-to-b from-stone-700  to-stone-800'>
+      <div className="controls" >
         <p>
-          <label $dynamic={emailNotValid} >Email</label>
+          <label className={`label ${passwordNotValid ? 'invalid' : undefined}`}>Email</label>
           <input
             // $invalid={emailNotValid}
             type="email"
-            // style={{
-            //   backgroundColor : emailNotValid ? "#fed2d2" :"#d1d5db"
-            // }}
+            style={{
+              backgroundColor : emailNotValid ? "#fed2d2" :"#d1d5db"
+            }}
             className={emailNotValid ? 'invalid' : undefined}
             onChange={(event) => handleInputChange('email', event.target.value)}
           />
