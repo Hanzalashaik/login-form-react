@@ -7,15 +7,6 @@ This Login Form project in React aims to illustrate different styling methods to
 <b>1.Login Form</b>: Provides a simple login interface with username and password fields.<br>
 <b>2.Styling Demonstrations</b>: Exhibits different styling techniques to customize and enhance the UI.<br>
 
-## Screenshoots
-
-
-![Image](https://github.com/Hanzalashaik/project-management-app/blob/main/public/project%20landing%20page.png "Image")
-
-
-
-![Image](https://github.com/Hanzalashaik/project-management-app/blob/main/public/project%20page.png "Image")
-
 
 ## Installation
 
